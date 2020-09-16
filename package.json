@@ -1,13 +1,9 @@
 {
-  "name": "standard-vue",
+  "name": "eslint-config-standard-vue-ts",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "lint": "eslint --ext .js,.vue,.ts src",
-    "lint:fix": "eslint --ext .js,.vue,.ts src --fix"
-  },
-  "author": "",
+  "main": "src/index.js",
+  "author": "yuuangzhang",
   "license": "ISC",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^4.1.1",
