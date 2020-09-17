@@ -1,4 +1,4 @@
-# Standardjs spec with .vue|js|ts
+# Standardjs Spec with .vue|js|ts files
 
 由于 [standardjs](https://standardjs.com/) 官方对 Vue 的支持不足，导致无法直接在 cli 使用 `standard --plugin vue **/*.vue` 命令来检查/修复 .vue 文件的语法错误。必须需要显示创建 .eslintrc.js 文件。  
 出于该原因在这里我编写了一个 eslint 扩展。排除了网络上的错误的，过时的，复杂的答案。保证你使用最简单的方式在项目里集成 standard 规范。
@@ -11,7 +11,7 @@
 - 自动代码格式化。 只需运行 standard --fix 从此和脏乱差的代码说再见。
 - 提前发现风格及程序问题。 减少代码审查过程中反反复复的修改过程，节约时间。
 
-## How to use with vue
+## How to use standard in vue project
 
 如何与 vue 项目结合使用，一个具体的 [example](./example/.eslintrc.js) 实现可以查看当前项目的 example 配置
 
@@ -38,6 +38,13 @@ module.exports = {
 
 ```
 
+### 添加脚本命令
+
+```json
+"lint": "eslint src --ext .js,.vue,.ts",
+"lint:fix": "eslint src --ext .js,.vue,.ts --fix"
+```
+
 ## VSCode formatOnSave
 
 开启 VSCode 保存自动格式化能力
@@ -47,6 +54,7 @@ module.exports = {
 安装下载量最高的 eslint plugin，这里注意如果你还在使用 `eslint.formatOnSave` 说明你当前用的是旧的 eslint 插件
 
 ![](./images/eslint.jpg)
+
 ### vscode setting
 
 必须包含以下配置
@@ -71,6 +79,12 @@ module.exports = {
 }
 ```
 
+### 成功提示
+
+如果你成功的进行了配置，那么你将会在 VSCode 中看到错误提示，如果没看到则意味着你的配置并没有成功
+
+![](./images/vscode.png)
+
 ## Readme
 
 这里着重介绍 standardjs 规范与大部分人的传统习惯可能不太一致的地方
@@ -79,10 +93,6 @@ module.exports = {
 - 使用驼峰命名禁止使用下划线这会拉长你的词距, 不得不承认的是 JS 世界更加 like 驼峰
 - 使用单引号
 - 不再有冗余的变量 – 这是导致 大量 bug 的源头!
-- 无分号 – 这没什么不好。不骗你！
-- 行首不要以 (, [, or ` 开头
-- 这是省略分号时唯一会造成问题的地方 – 工具里已加了自动检测！
-- 详情
 - 关键字后加空格 if (condition) { ... }
 - 函数名后加空格 function name (arg) { ... }
 - 坚持使用全等 === 摒弃 == 一但在需要检查 null || undefined 时可以使用 obj == null。
@@ -105,7 +115,7 @@ module.exports = {
 
 ### 如何在大型项目中使用该规范
 
-大部分的老项目都不存在 lint 工具，在多人开发的场景下，如果某人使用了 lint 工具来进行了一些 fix 操作，通常都会导致 merge 的时候出现一堆冲突。  
+大部分的老项目都不存在 lint 工具或者是旧的 lint 工具无法满足需求，在多人开发的场景下，如果某人使用了新的 lint 工具来进行了一些 fix 操作，通常都会导致 merge 的时候出现一堆冲突。  
 这里提出个人认为比较好的迁移方案。
 
 #### 单独创建 style/standard 分支
