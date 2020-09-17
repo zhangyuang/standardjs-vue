@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "lint": "eslint --ext .js,.vue,.ts src",
+    "lint": "eslint --ext .js,.vue,.ts src --config .eslintrc.js",
     "lint:fix": "eslint --ext .js,.vue,.ts src --fix"
   },
   "author": "yuuangzhang",

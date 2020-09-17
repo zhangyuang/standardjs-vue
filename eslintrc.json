@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "plugin:vue/vue3-recommended",
+    "standard",
+    "standard-with-typescript"
+  ],
+  "rules": {
+    "vue/max-attributes-per-line": ["error", {
+      "singleline": 8,
+      "multiline": {
+        "max": 8,
+        "allowFirstLine": true
+      }
+    }]
+  }
+}
