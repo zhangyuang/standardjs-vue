@@ -4,9 +4,6 @@ module.exports = {
     'standard',
     'standard-with-typescript'
   ],
-  parserOptions: {
-    project: './tsconfig.json'
-  },
   rules: {
     // 属性换行配置
     'vue/max-attributes-per-line': ['error', {
