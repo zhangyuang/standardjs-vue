@@ -1,15 +1,14 @@
 {
-  "name": "eslint-config-standard-vue-ts",
+  "name": "standard-vue-ts-example",
   "version": "1.0.0",
-  "description": "",
-  "main": "src/index.js",
+  "description": "standardjs with vue",
   "scripts": {
     "lint": "eslint src --ext .js,.vue,.ts",
     "lint:fix": "eslint src --ext .js,.vue,.ts --fix"
   },
   "author": "yuuangzhang",
   "license": "ISC",
-  "dependencies": {
-    "eslint-config-standard-vue-ts": "^1.0.0"
+  "devDependencies": {
+    "eslint-config-standard-vue-ts": "^1.0.3"
   }
 }

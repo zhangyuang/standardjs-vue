@@ -41,8 +41,8 @@ module.exports = {
 ### 添加脚本命令
 
 ```json
-"lint": "eslint src --ext .js,.vue,.ts",
-"lint:fix": "eslint src --ext .js,.vue,.ts --fix"
+"lint": "eslint ./ --ext .js,.vue,.ts",
+"lint:fix": "eslint ./ --ext .js,.vue,.ts --fix"
 ```
 
 ## VSCode formatOnSave
