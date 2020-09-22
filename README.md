@@ -113,42 +113,6 @@ module.exports = {
 
 常见问题收录
 
-### 如何在大型项目中使用该规范
-
-大部分的老项目都不存在 lint 工具或者是旧的 lint 工具无法满足需求，在多人开发的场景下，如果某人使用了新的 lint 工具来进行了一些 fix 操作，通常都会导致 merge 的时候出现一堆冲突。  
-这里提出个人认为比较好的迁移方案。
-
-#### 单独创建 style/standard 分支
-
-```bash
-$ git checkout -b style/standard
-```
-
-在该分支上加入本项目的依赖配置以及脚本文件。但是此时不要做 fix 操作来修复业务代码！  
-将分支 push 到 origin
-
-#### 同步分支
-
-各个不同业务分支的同学同步 style/standard 的更新内容。
-并且各自在本地执行 `npm run lint:fix` 将能够自动修复的部分修复，像下划线转驼峰这些需要手动修复的错误可以先忽略
-
-#### style/standard 分支修复
-
-在 style/standard 分支执行 `npm run lint:fix` 将能够自动修复的部分修复，像下划线转驼峰这些需要手动修复的错误可以先忽略
-这样我们的 style/standard 分支 以及各个业务分支都已经自动修复了 code style
-
-#### style/standard merge 业务分支
-
-通过 pr 来让style/standard 去merge 业务分支，由于各个分支都自动跑了一遍 fix 所以这时候不存在语法层面的冲突可以直接merge
-
-#### style/standard 修复其他错误
-
-style/standard merge 完业务分支后，在该分支上修复剩余的所有错误。例如下划线转驼峰这些需要手动修复的错误
-
-#### style/standard 合入 master
-
-这时候就可以安心的把 style/standard 合入 master 了，如果此时还存在没有合入 master 的业务分支，可以直接 pull style/standard 的最新修改即可以自动修复下划线转驼峰这些需要手动修复的错误。之后新的需求直接从 master 切新的分支开发即可
-
 ### 这个规范与我的习惯差距很大怎么办
 
 不要拘泥于你的习惯一成不变，虽然一些语法没有优劣之分，但不得不承认的是大部分的语法以今天的发展眼光看来都是设计的非常落后的。follow 这套最先进的规范，无论对你还是对团队都是提升。就像 PHP 的大部分语法设计都是被人诟病的。大部分模版引擎的语法设计也十分的反人类极其的落后难用。
