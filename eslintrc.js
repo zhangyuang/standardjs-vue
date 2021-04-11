@@ -1,4 +1,10 @@
 
+const { existsSync } = require('fs')
+const { resolve } = require('path')
+
+const hasLintJson = existsSync(resolve(__dirname, '../../tsconfig.lint.json'))
+const project = hasLintJson ? resolve(__dirname, '../../tsconfig.lint.json') : resolve(__dirname, '../../tsconfig.json')
+
 module.exports = {
   extends: [
     'plugin:vue/vue3-recommended',
@@ -8,6 +14,7 @@ module.exports = {
   parser: 'vue-eslint-parser',
   parserOptions: {
     parser: '@typescript-eslint/parser',
+    project,
     extraFileExtensions: ['.vue'],
     createDefaultProgram: true
   },
