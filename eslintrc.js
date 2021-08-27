@@ -36,6 +36,7 @@ module.exports = {
     '@typescript-eslint/restrict-plus-operands': 'off',
     '@typescript-eslint/restrict-template-expressions': 'off',
     '@typescript-eslint/no-misused-promises': 'off',
-    'import/export': 'off'
+    'import/export': 'off',
+    'vue/require-prop-types': 'off'
   }
 }
