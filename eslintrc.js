@@ -37,6 +37,8 @@ module.exports = {
     '@typescript-eslint/restrict-template-expressions': 'off',
     '@typescript-eslint/no-misused-promises': 'off',
     'import/export': 'off',
-    'vue/require-prop-types': 'off'
+    'vue/require-prop-types': 'off',
+    '@typescript-eslint/dot-notation': ['off'],
+    'padded-blocks': ['off']
   }
 }
