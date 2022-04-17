@@ -39,6 +39,7 @@ module.exports = {
     'import/export': 'off',
     'vue/require-prop-types': 'off',
     '@typescript-eslint/dot-notation': ['off'],
-    'padded-blocks': ['off']
+    'padded-blocks': ['off'],
+    '@typescript-eslint/no-var-requires': ['off']
   }
 }
